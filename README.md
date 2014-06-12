@@ -2,7 +2,7 @@
 
 App that allows you to look at bands you've liked on Facebook. 
 
-Written using AngularJS, Facebook Graph API, and Twitter Bootstrap.
+Written using AngularJS, Facebook Graph API, and Twitter Bootstrap using test driven methodology.
 
 #General
 
