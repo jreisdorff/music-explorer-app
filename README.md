@@ -48,7 +48,7 @@ details.cover.source (the direct link to the cover photo)
 
 ###Directive
 
-I've created a directive called backImg that allows me to easily change the background image on the fly of the element in which it is placed. In this case, the method modifies the css of the jumbotron div in which it is referenced. 
+I've created a directive called backImg that allows me to easily change the background image on the fly of the element in which it is placed. In this case, the method modifies the css of the div in which it is referenced. 
 
 ##index.html
 
