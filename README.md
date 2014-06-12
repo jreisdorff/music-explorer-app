@@ -45,3 +45,15 @@ The results are then set to the details scope, which we access in the html via:
 
 details.about
 details.cover.source (the direct link to the cover photo)
+
+###Directive
+
+I've created a directive called backImg that allows me to easily change the background image on the fly of the element in which it is placed. In this case, the method modifies the css of the jumbotron div in which it is referenced. 
+
+##index.html
+
+The page style was adapted from this twitter bootstrap example: http://getbootstrap.com/examples/jumbotron/. I had spent a lot of time trying to write the css for this page on my own, then realized that I could use bootstrap to allow myself more time to focus on working with Angular and the Graph API. 
+
+In this html, I used ng-show and ng-hide to dynamically show or hide elements on the page, depending on which data is available from the graph API calls at the time. I'm using the ng-repeat directive and looping via "m in music.data" to dynamically create the band divs.
+
+Scripts are placed at the bottom of the document for quick page load times.
