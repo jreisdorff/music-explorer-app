@@ -6,7 +6,7 @@ Written using AngularJS, Facebook Graph API, and Twitter Bootstrap using test dr
 
 #General
 
-##app.js
+##js/app.js
 
 This is where I've layed out the angularJS code which makes calls to the Facebook graph API. 
 
