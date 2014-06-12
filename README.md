@@ -13,7 +13,7 @@ This is where I've layed out the angularJS code which makes calls to the Faceboo
 
 Angular service functions:
 
-##getMusicPics(FB, pagingUrl)
+##getMusic(FB, pagingUrl)
 
 Arguments: 
 FB - Used to check login status, then make the API call
