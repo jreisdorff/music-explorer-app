@@ -1,0 +1,21 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.animate-enter {
+	-webkit-transition: .5s linear all; Chrome
+	transition: .5s linear all;
+	opacity: 0;
+}
+ 
+.animate-enter.animate-enter-active {
+	transition: .5s linear all;
+	opacity: 1;
+}
+
+.jumbotron {
+  margin-bottom: 0px;
+  height: 350px;
+}

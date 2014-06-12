@@ -1,0 +1,79 @@
+<!doctype html>
+<html ng-app="dataWizApp" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Music Likes Explorer</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body ng-controller="MusicListCtrl">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Music Likes Explorer</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        	<div class="navbar-form navbar-right" role="form">
+            	<button type="submit" ng-click="getMusic()" class="btn btn-success">Get Most Recent Music Likes</button>
+				<fb:login-button data-size="large" data-auto-logout-link="true" scope="public_profile,email,user_likes" data-size="xlarge">
+					Login to Facebook to use Music Likes Explorer
+				</fb:login-button>      
+			</div>   
+        </div>
+      </div>
+    </div>
+    <div ng-hide="details.connected" class="jumbotron">
+      <div class="container">
+        <h1>Music Likes Explorer</h1>
+        <p>Click the "Get Most Recent Music Likes" button to get the last bands/musicians you most recently liked on Facebook.</p>
+      </div>
+    </div>
+    <div back-img="{{details.cover.source}}" ng-show="details.connected" class="jumbotron">
+    </div>
+    <div class="container">
+        <h1>{{details.name}}</h1>
+        <p>{{details.about}}</p>
+        <p><a class="btn btn-primary btn-lg" ng-hide="!music.connected" ng-click="getAdditionalMusic(music.paging.next)" role="button">Get More Bands &raquo;</a></p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" ng-repeat="m in music.data">
+          <h2>{{m.name}}</h2>
+          <p>{{m.category}}</p>
+          <p><a class="btn btn-default" href="#" ng-click="getMusicDetails(m.id)" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Jake Reisdorff 2014</p>
+      </footer>
+    </div>
+	<script src="http://connect.facebook.net/en_US/all.js"></script>
+	<script>
+	  FB.init({
+	    appId      : '1440557876202434',     
+	    status     : true,                              
+	    xfbml      : true 
+	  });
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+	<script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
